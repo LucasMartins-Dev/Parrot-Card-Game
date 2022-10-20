@@ -11,13 +11,21 @@ const img = [
 let cartas;
 function jogo(element){
 cartas = prompt('Com quantas cartas deseja jogar ?')
+while(cartas%2!==0 || cartas < 4 && cartas%2===0 || cartas>14 && cartas%2===0 ){
+   alert('Numero de cartas inválido !')
+cartas = prompt('Com quantas cartas deseja jogar ?')
+}
 let imgduplicada = [];
-if(cartas>=4 && cartas<=14 && cartas%2===0){
+
+  if(cartas>=4 && cartas<=14 && cartas%2===0){
    for(let i=0;i<cartas/2;i++){
       imgduplicada.push(img[i]);
       imgduplicada.push(img[i]);
+   }
 }
-}
+
+
+
  imgduplicada.sort(()=> Math.random() - 0.5);
 
 console.log(imgduplicada)
