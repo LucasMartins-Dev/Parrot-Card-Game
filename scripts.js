@@ -10,7 +10,7 @@ const img = [
 
 let cartas;
 function jogo(element){
-cartas = prompt('Com quantas cartas deseja jogar ?')
+cartas = prompt('Com quantas cartas deseja jogar ? Nº par entre 4 e 14')
 while(cartas%2!==0 || cartas < 4 && cartas%2===0 || cartas>14 && cartas%2===0 ){
    alert('Numero de cartas inválido !')
 cartas = prompt('Com quantas cartas deseja jogar ?')
@@ -75,7 +75,9 @@ function clicar(elemento){
 
       if(atual===anterior && atu!==ant ){
       elemento.classList.add("certo");
+      elemento.children[1].classList.add("correto");
       ant.classList.add("certo");
+      ant.children[1].classList.add("correto");
       viradas=viradas+2;
       console.log(viradas);
       }else if(click%2===0){
